@@ -3,37 +3,45 @@ package StackQuestions;
 import java.util.Stack;
 
 public class NextGreaterElement {
-    public static int[] greater(int[] array) {
+
+    /**
+     * Finds the next greater element for each element in the input array.
+     * If there is no greater element, assigns -1.
+     *
+     * @param array The input array
+     * @return An array containing the next greater element for each element in the input array
+     */
+    public static int[] findNextGreaterElements(int[] array) {
         Stack<Integer> stack = new Stack<>();
         int n = array.length;
-        int[] array1 = new int[n];
-        for (int i = n - 1; i >= 0; i--) { // Corrected loop condition
-            if (stack.isEmpty()){
-                array1[i]=-1;
+        int[] result = new int[n];
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (stack.isEmpty()) {
+                result[i] = -1;
                 stack.push(array[i]);
-            }
-            else {
-                while (!stack.isEmpty() && array[i] >= stack.peek()){
+            } else {
+                while (!stack.isEmpty() && array[i] >= stack.peek()) {
                     stack.pop();
                 }
-                if (stack.isEmpty()){
-                    array1[i]=-1;
-                }
-                else {
-                    array1[i]=stack.peek();
+                if (stack.isEmpty()) {
+                    result[i] = -1;
+                } else {
+                    result[i] = stack.peek();
                 }
                 stack.push(array[i]);
             }
         }
-        return array1;
+        return result;
     }
 
     public static void main(String[] args) {
-        int[]c={1,2,3,4};
-        int b[] = {1, 5, 3, 2, 1, 6, 3, 4};
-        int a[] = greater(b);
-        for (int i : a) {
-            System.out.print(i + " ");
+        int[] inputArray = {1, 5, 3, 2, 1, 6, 3, 4};
+        int[] nextGreaterElements = findNextGreaterElements(inputArray);
+
+        // Print the result
+        for (int element : nextGreaterElements) {
+            System.out.print(element + " ");
         }
     }
 }
