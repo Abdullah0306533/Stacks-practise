@@ -1,4 +1,4 @@
-package StackQuestions;
+package stackquestions;
 
 import java.util.Stack;
 
