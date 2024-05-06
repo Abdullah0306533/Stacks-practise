@@ -14,7 +14,7 @@ public class StockSpanProblem {
      * @param n     The number of days.
      * @return An array containing the span of stock prices for each day.
      */
-    public static int[] calculateSpan(int price[], int n) {
+    public static int[] calculateSpan(int price[]) {
         // Length of the price array
         int length = price.length;
         // Stack to store indices of days with prices less than or equal to the current day
@@ -49,9 +49,7 @@ public class StockSpanProblem {
         System.out.println("link of the problem solved : https://www.geeksforgeeks.org/problems/stock-span-problem-1587115621/1");
         // Example usage
         int[] prices = {100, 80, 60, 70, 60, 75, 85};
-        int n = prices.length;
-        int[] spans = calculateSpan(prices, n);
-
+        int[] spans = calculateSpan(prices);
         // Print the spans
         System.out.print("Span of stock prices for each day: ");
         for (int span : spans) {
