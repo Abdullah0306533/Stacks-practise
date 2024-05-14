@@ -11,7 +11,7 @@ public class StockSpanProblem {
      * Calculates the span of stock prices for all n days.
      *
      * @param price An array containing the prices of the stock for n days.
-     * @param      The number of days.
+     * @param The number of days.
      * @return An array containing the span of stock prices for each day.
      */
     public static int[] calculateSpan(int price[]) {
