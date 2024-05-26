@@ -17,6 +17,7 @@ public class StockSpanProblemPractise {
             resultant[i]=(stack.isEmpty()) ? (i+1):(i-stack.peek());
             stack.push(i);
         }
+
         return resultant;
 
     }
