@@ -108,8 +108,8 @@ public class InfixToPrefix {
     }
 
     public static void main(String[] args) {
-        String infix = "(A-B/C)*(A/K-L)";
+        String infix = "a+b*c";
         System.out.println("Infix Expression: " + infix);
-        System.out.println("Prefix Expression: " + reverse(infix));
+        System.out.println("Prefix Expression: " + infixToPrefix(infix));
     }
 }
